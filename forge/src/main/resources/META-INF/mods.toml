@@ -1,0 +1,43 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+issueTrackerURL = "https://github.com/henkelmax/garden-api/issues"
+license = "MIT AND GPL-3.0-only"
+
+[[mods]]
+modId = "garden_api"
+version = "${version}"
+displayName = "Garden API"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/garden-api"
+logoFile = "icon.png"
+authors = "Saint, Max Henkel, Gecko, AzureDoom, Tslat"
+description = '''
+Merged Garden API module combining advanced animation tooling and realistic sound physics for Minecraft 1.20.1.
+'''
+
+[[dependencies.garden_api]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.garden_api]]
+modId = "cloth_config"
+mandatory = false
+versionRange = "[11.0.99,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.garden_api]]
+modId = "voicechat"
+mandatory = false
+versionRange = "[1.20.1-2.3.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.garden_api]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"

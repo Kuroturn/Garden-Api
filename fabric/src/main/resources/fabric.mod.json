@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "garden_api",
+  "version": "${version}",
+  "name": "Garden API",
+  "description": "Merged Garden API module combining advanced animation tooling and realistic sound physics for Minecraft 1.20.1.",
+  "authors": [
+    "Saint",
+    "Max Henkel",
+    "Gecko",
+    "AzureDoom",
+    "Tslat"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/garden-api",
+    "issues": "https://github.com/henkelmax/garden-api/issues",
+    "sources": "https://github.com/henkelmax/garden-api"
+  },
+  "license": "MIT AND GPL-3.0-only",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.garden.api.fabric.GardenApiFabricMod"
+    ],
+    "client": [
+      "com.garden.api.fabric.GardenApiFabricMod"
+    ],
+    "modmenu": [
+      "com.garden.api.integration.ModMenuIntegration"
+    ],
+    "voicechat": [
+      "com.garden.api.integration.voicechat.SimpleVoiceChatPlugin"
+    ]
+  },
+  "mixins": [
+    "garden_api.mixins.json",
+    "garden_api.fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cloth-config2": "*",
+    "modmenu": "*",
+    "voicechat": "*"
+  },
+  "accessWidener": "garden_api.accesswidener"
+}

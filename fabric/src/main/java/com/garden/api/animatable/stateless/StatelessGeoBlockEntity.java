@@ -1,0 +1,46 @@
+package com.garden.api.animatable.stateless;
+
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import com.garden.api.animatable.GeoBlockEntity;
+import com.garden.api.core.animation.RawAnimation;
+import com.garden.api.network.GardenApiNetwork;
+import com.garden.api.network.packet.StatelessBlockEntityPlayAnimPacket;
+import com.garden.api.network.packet.StatelessBlockEntityStopAnimPacket;
+
+/**
+ * Extension of {@link StatelessAnimatable} for {@link GeoBlockEntity} animatables
+ */
+public non-sealed interface StatelessGeoBlockEntity extends StatelessAnimatable, GeoBlockEntity {
+    /**
+     * Start or continue a pre-defined animation
+     */
+    @Override
+    default void playAnimation(RawAnimation animation) {
+        if (!(this instanceof BlockEntity self))
+            throw new ClassCastException("Cannot use StatelessGeoBlockEntity on a non-blockentity animatable!");
+
+        if (self.getLevel() instanceof ServerLevel level) {
+            GardenApiNetwork.sendToEntitiesTrackingChunk(new StatelessBlockEntityPlayAnimPacket(self.getBlockPos(), animation), level, self.getBlockPos());
+        }
+        else {
+            handleClientAnimationPlay(this, 0, animation);
+        }
+    }
+
+    /**
+     * Stop an already-playing animation
+     */
+    @Override
+    default void stopAnimation(String animation) {
+        if (!(this instanceof BlockEntity self))
+            throw new ClassCastException("Cannot use StatelessGeoBlockEntity on a non-blockentity animatable!");
+
+        if (self.getLevel() instanceof ServerLevel level) {
+            GardenApiNetwork.sendToEntitiesTrackingChunk(new StatelessBlockEntityStopAnimPacket(self.getBlockPos(), animation), level, self.getBlockPos());
+        }
+        else {
+            handleClientAnimationStop(this, 0, animation);
+        }
+    }
+}

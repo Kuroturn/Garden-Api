@@ -1,0 +1,7 @@
+{
+  "parent": "garden_api:block/default_box",
+  "textures": {
+    "1": "garden_api:block/botarium_side",
+    "particle": "garden_api:block/botarium_side"
+  }
+}
