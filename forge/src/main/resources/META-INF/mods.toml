@@ -11,7 +11,7 @@ displayURL = "https://www.curseforge.com/minecraft/mc-mods/garden-api"
 logoFile = "icon.png"
 authors = "Saint, Max Henkel, Gecko, AzureDoom, Tslat"
 description = '''
-Merged Garden API module combining advanced animation tooling and realistic sound physics for Minecraft 1.20.1.
+Merged Garden API module combining advanced animation tooling, realistic sound physics, and integrated voice chat for Minecraft 1.20.1.
 '''
 
 [[dependencies.garden_api]]
@@ -25,13 +25,6 @@ side = "BOTH"
 modId = "cloth_config"
 mandatory = false
 versionRange = "[11.0.99,)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies.garden_api]]
-modId = "voicechat"
-mandatory = false
-versionRange = "[1.20.1-2.3.0,)"
 ordering = "AFTER"
 side = "BOTH"
 

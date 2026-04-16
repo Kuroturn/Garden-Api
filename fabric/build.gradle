@@ -37,7 +37,13 @@ dependencies {
     }
     modImplementation "com.terraformersmc:modmenu:$rootProject.modmenu_version"
     implementation "de.maxhenkel.configbuilder:configbuilder:$rootProject.configbuilder_version"
-    implementation "de.maxhenkel.voicechat:voicechat-api:$rootProject.voicechat_api_version"
+    implementation "com.electronwill.night-config:core:$rootProject.night_config_version"
+    implementation "com.electronwill.night-config:toml:$rootProject.night_config_version"
+    implementation "org.concentus:Concentus:$rootProject.concentus_version"
+    implementation "de.maxhenkel.opus4j:opus4j:$rootProject.opus4j_version"
+    implementation "de.maxhenkel.rnnoise4j:rnnoise4j:$rootProject.rnnoise4j_version"
+    implementation "de.maxhenkel.lame4j:lame4j:$rootProject.lame4j_version"
+    implementation "de.maxhenkel.speex4j:speex4j:$rootProject.speex4j_version"
     implementation "com.eliotlash.mclib:mclib:$rootProject.mclib_version"
     compileOnly "com.google.code.findbugs:jsr305:$rootProject.jsr305_version"
     compileOnly "org.jetbrains:annotations:$rootProject.jetbrains_annotations_version"
@@ -45,6 +51,13 @@ dependencies {
     common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
     shadowBundle "de.maxhenkel.configbuilder:configbuilder:$rootProject.configbuilder_version"
+    shadowBundle "com.electronwill.night-config:core:$rootProject.night_config_version"
+    shadowBundle "com.electronwill.night-config:toml:$rootProject.night_config_version"
+    shadowBundle "org.concentus:Concentus:$rootProject.concentus_version"
+    shadowBundle "de.maxhenkel.opus4j:opus4j:$rootProject.opus4j_version"
+    shadowBundle "de.maxhenkel.rnnoise4j:rnnoise4j:$rootProject.rnnoise4j_version"
+    shadowBundle "de.maxhenkel.lame4j:lame4j:$rootProject.lame4j_version"
+    shadowBundle "de.maxhenkel.speex4j:speex4j:$rootProject.speex4j_version"
     shadowBundle "com.eliotlash.mclib:mclib:$rootProject.mclib_version"
 }
 

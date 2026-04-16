@@ -6,18 +6,23 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import de.maxhenkel.voicechat.api.events.*;
+import com.garden.api.voicechat.api.ForgeVoicechatPlugin;
+import com.garden.api.voicechat.api.Position;
+import com.garden.api.voicechat.api.VoicechatApi;
+import com.garden.api.voicechat.api.VoicechatPlugin;
+import com.garden.api.voicechat.api.audiochannel.ClientLocationalAudioChannel;
+import com.garden.api.voicechat.api.events.ClientSoundEvent;
+import com.garden.api.voicechat.api.events.ClientVoicechatConnectionEvent;
+import com.garden.api.voicechat.api.events.CreateOpenALContextEvent;
+import com.garden.api.voicechat.api.events.EventRegistration;
+import com.garden.api.voicechat.api.events.OpenALSoundEvent;
+import com.garden.api.voicechat.api.events.VoicechatServerStartedEvent;
 import org.lwjgl.openal.EXTThreadLocalContext;
 
 import com.garden.api.Loggers;
 import com.garden.api.SoundPhysics;
 import com.garden.api.SoundPhysicsMod;
 
-import de.maxhenkel.voicechat.api.ForgeVoicechatPlugin;
-import de.maxhenkel.voicechat.api.Position;
-import de.maxhenkel.voicechat.api.VoicechatApi;
-import de.maxhenkel.voicechat.api.VoicechatPlugin;
-import de.maxhenkel.voicechat.api.audiochannel.ClientLocationalAudioChannel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.phys.Vec3;
 

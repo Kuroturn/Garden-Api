@@ -8,6 +8,8 @@ import com.garden.api.SoundPhysicsMod;
 import com.garden.api.cache.GardenApiCache;
 import com.garden.api.example.GardenApiMod;
 import com.garden.api.integration.ClothConfigIntegration;
+import com.garden.api.lexiconfig.forge.ForgeLexiconfig;
+import com.garden.api.voicechat.forge.ForgeVoicechatMod;
 
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
@@ -24,6 +26,8 @@ public class GardenApiForgeMod extends SoundPhysicsMod {
 
     public GardenApiForgeMod() {
         new GardenApiMod();
+        new ForgeLexiconfig();
+        new ForgeVoicechatMod();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::registerReloadListeners);

@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.garden.api.lexiconfig.mixin",
+  "refmap": "garden_api.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinMinecraftServer"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

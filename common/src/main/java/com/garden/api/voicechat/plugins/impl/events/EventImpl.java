@@ -1,0 +1,27 @@
+package com.garden.api.voicechat.plugins.impl.events;
+
+import com.garden.api.voicechat.api.events.Event;
+
+public class EventImpl implements Event {
+
+    protected boolean cancelled;
+
+    @Override
+    public boolean isCancellable() {
+        return true;
+    }
+
+    @Override
+    public boolean cancel() {
+        if (!isCancellable()) {
+            return false;
+        }
+        cancelled = true;
+        return true;
+    }
+
+    @Override
+    public boolean isCancelled() {
+        return cancelled;
+    }
+}

@@ -1,0 +1,16 @@
+package com.garden.api.lexiconfig.forge;
+
+import com.garden.api.lexiconfig.Lexiconfig;
+import com.garden.api.lexiconfig.LexiconfigClient;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+
+@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Lexiconfig.ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class ForgeLexiconfigClient {
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        LexiconfigClient.initialize();
+    }
+}

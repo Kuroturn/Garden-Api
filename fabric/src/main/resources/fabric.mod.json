@@ -26,8 +26,12 @@
     "client": [
       "com.garden.api.fabric.GardenApiFabricMod"
     ],
+    "lexiconfig": [
+      "com.garden.api.lexiconfig.LexiconfigLibrary"
+    ],
     "modmenu": [
-      "com.garden.api.integration.ModMenuIntegration"
+      "com.garden.api.integration.ModMenuIntegration",
+      "com.garden.api.voicechat.fabric.integration.ModMenu"
     ],
     "voicechat": [
       "com.garden.api.integration.voicechat.SimpleVoiceChatPlugin"
@@ -35,7 +39,9 @@
   },
   "mixins": [
     "garden_api.mixins.json",
-    "garden_api.fabric.mixins.json"
+    "garden_api.lexiconfig.mixins.json",
+    "garden_api.fabric.mixins.json",
+    "garden_api.voicechat.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.18.4",
@@ -45,8 +51,7 @@
   },
   "suggests": {
     "cloth-config2": "*",
-    "modmenu": "*",
-    "voicechat": "*"
+    "modmenu": "*"
   },
   "accessWidener": "garden_api.accesswidener"
 }
